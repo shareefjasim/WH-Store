@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="refresh" content="0; URL=./index.html">
   <script>
-    // Redirect to index.html and preserve pathname and query parameters for client-side routing
-    window.location.replace('/index.html' + window.location.pathname + window.location.search);
+    // Check if the URL already includes 'index.html' to prevent infinite loop
+    if (!window.location.pathname.includes('index.html')) {
+      window.location.replace('/index.html' + window.location.pathname + window.location.search);
+    }
   </script>
 </head>
 <body>
