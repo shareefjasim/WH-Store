@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="refresh" content="0; URL=./index.html">
   <script>
-    // Check if the URL already includes 'index.html' to prevent infinite loop
-    if (!window.location.pathname.includes('index.html')) {
-      window.location.replace('/index.html' + window.location.pathname + window.location.search);
-    }
+    // Attempt to dynamically update the URL to include pathname and search parameters
+    (function() {
+      var pathname = window.location.pathname;
+      var search = window.location.search;
+      var hash = pathname + search;
+      window.location.replace('/index.html#' + hash);
+    })();
   </script>
 </head>
 <body>
